@@ -40,7 +40,8 @@ class GeneralWithoutBodyRequest
 
         $guzzleClient = new Client([
             'base_uri' => $baseUrl,
-            'timeout' => 3.0
+            'timeout' => 10,
+            'verify'  => false
         ]);
 
         return json_decode($guzzleClient->request($httpMethod, $requestUrl)->getBody()->getContents());
